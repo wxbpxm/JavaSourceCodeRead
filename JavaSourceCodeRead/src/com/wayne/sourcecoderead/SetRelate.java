@@ -2,6 +2,7 @@ package com.wayne.sourcecoderead;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -60,6 +61,17 @@ public class SetRelate {
 		System.err.print("集合中在d(包括)和g(不包括)之间的元素：");
 		SortedSet<String> subE = sortedSet.subSet("d", "g");
 		System.err.println(subE);
+		
+		//LinkedHashSet具有HashSet的查询速度，且内部使用链表维护元素的顺序（保持有序，和ArrayList类似）
+		Set<String> linkedHashSet = new LinkedHashSet<>();
+		linkedHashSet.add("111");
+		linkedHashSet.add("222");
+		linkedHashSet.add("333");
+		
+		System.err.println("linked Hash Set elements:");
+		for(String tmp : linkedHashSet) {
+			System.err.println(tmp);
+		}
 		
 	}
 

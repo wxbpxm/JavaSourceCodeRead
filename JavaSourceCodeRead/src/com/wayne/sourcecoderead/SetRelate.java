@@ -13,18 +13,16 @@ public class SetRelate {
 
 		hashSet.add("111");
 		hashSet.add("333");
-		hashSet.add("222");
+		hashSet.add(new String("222"));
 		hashSet.add(null); // 可以添加null值
-
-		System.err.println(hashSet);// 输出[null, 111, 222, 333] 说明是无序的，和放入的顺序不一致了
-
-		for (String tmp : hashSet) {
-			System.err.println(tmp);
-		}
+		hashSet.add(new String("222"));
+		System.err.println(hashSet);// 输出[null, 111, 222, 333] 说明是无序的，和放入的顺序不一致了, 并且说明222只保留了一份，达到的去重效用
+		
+		
 
 		Iterator<String> it = hashSet.iterator();
 		while (it.hasNext()) {
-			System.err.println(it.next());
+			System.err.println("current:" + it.next());
 			it.remove();
 			System.err.println("current set size:" + hashSet.size());
 		}
@@ -62,6 +60,7 @@ public class SetRelate {
 		System.err.print("集合中在d(包括)和g(不包括)之间的元素：");
 		SortedSet<String> subE = sortedSet.subSet("d", "g");
 		System.err.println(subE);
+		
 	}
 
 }
